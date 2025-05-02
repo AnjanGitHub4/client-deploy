@@ -88,7 +88,7 @@ export default function Header() {
             </p>
 
             {/* searchBar */}
-            <div className="flex items-center justify-center gap-4 mt-[2.5rem] bg-gray-200 border-1 border-green-400 px-2 lg:w-10 h-10 rounded-[100px] shadow-md hover:justify-start lg:hover:w-[25%] md:hover:w-[50%] transition-all ease-in duration-300 hover:delay-75 text-black group search-bar">
+            <div className="flex items-center justify-center gap-4 mt-[2.5rem] bg-gray-200 border-1 border-green-400 px-2 hover:w-[25%] lg:w-10 h-10 rounded-[100px] shadow-md hover:justify-start lg:hover:w-[25%] md:hover:w-[50%] text-black transition-all ease-in md:duration-300 group search-bar">
               <TbMapPinSearch size={24} className="text-green-600" />
               <div className="w-full h-full hidden group-hover:flex group-hover:items-center">
                 <input
@@ -100,14 +100,6 @@ export default function Header() {
             </div>
           </div>
 
-          {/* header banner */}
-          {/* <div className="absolute top-[0%] bottom-0 right-[-5%] w-max z-[-9999]  translate-y-[3.35rem] min-h-[42vh] overflow-hidden group md:hidden lg:block">
-            <img
-              src="/assets/images/man_travel.png"
-              alt="header background"
-              className="w-50% h-[40vh] object-cover rounded-3xl translate-y-14  scale-110 group-hover:scale-125 group-hover:translate-y-12 transition-all duration-500 ease-in-out rotate-3 hover:rotate-0"
-            />
-          </div> */}
           {/* Todo: if needs */}
         </Container>
         <div className="absolute bottom-[0%] left-0 w-full  z-[999]"></div>

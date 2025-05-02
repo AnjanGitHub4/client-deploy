@@ -70,7 +70,7 @@ export default function TopDestination() {
       >
         <Container width={90}>
           {/* Destionation title */}
-          <div className="flex items-center justify-center pt-6">
+          <div className="flex items-center justify-center py-5">
             <h3 className="text-slate-700 text-2xl ">
               Top
               <SkewText text="Destination" bgStyle="before:bg-teal-500" />
@@ -88,7 +88,7 @@ export default function TopDestination() {
                   className="w-full h-60 object-cover rounded-md"
                 />
               </div>
-              <div className="destination-overlay-video p-2 rounded-md h-72 border-1 w-60 absolute top-[25%] right-[2%] bg-white">
+              <div className="destination-overlay-video bg-white p-2 rounded-md absolute top-1/4 right-[50%] translate-x-[50%] h-56 min-w-56 border-1 sm:h-60 sm:w-64 sm:top-[20%] sm:right-[2%] sm:translate-x-0 lg:h-72 lg:w-64 lg:top-[25%] lg:right-[2%] lg:translate-x-0">
                 <div className="video w-full h-full relative">
                   <video
                     preload="none"
@@ -111,8 +111,8 @@ export default function TopDestination() {
             </div>
 
             {/* destination contents */}
-            <div className="px-4 pt-2 w-3/4">
-              <p className="text-slate-500 first-line:tracking-widest first-letter:text-7xl first-letter:font-normal first-letter:text-teal-500 first-letter:mr-3 first-letter:float-left text-justify text-sm">
+            <div className="px-4 pt-2 lg:w-3/4 mt-9 md:mt-0">
+              <p className="text-slate-500 first-line:tracking-widest first-letter:text-7xl first-letter:font-normal first-letter:text-teal-500 first-letter:mr-3 first-letter:float-left text-justify text-[.7rem] text-balance md:text-sm md:mt-10 lg:text-sm lg:mt-0 leading-6">
                 Wonderful destinations await you around every corner of the
                 world. From serene tropical islands to bustling cultural
                 capitals, we've handpicked experiences that will take your
@@ -144,7 +144,7 @@ export default function TopDestination() {
                       data?.destinations?.map((item, index) => (
                         <CarouselItem
                           key={index}
-                          className="md:basis-1/3 lg:basis-1/3 select-none"
+                          className="sm:basis-1/2 md:basis-1/3 lg:basis-1/3 select-none"
                         >
                           <div className="">
                             <Card
@@ -203,8 +203,8 @@ export default function TopDestination() {
                                   {item.description}
                                 </span>
                                 <div className="divide-y-2 divide-blue-200 w-full border-b border-b-blue-100"></div>
-                                <div className="w-full flex justify-between items-center md:flex-wrap mt-2 book-btn">
-                                  <p className="lg:text-sm lg:text-slate-600 mg:mb-0 md:mb-2 cursor-text">
+                                <div className="w-full flex flex-wrap md:flex-wrap lg:flex-nowrap justify-center lg:justify-between items-center mt-0 lg:mt-3 book-btn">
+                                  <p className="my-2 lg:text-sm lg:text-slate-600 md:mt-0 cursor-text">
                                     Day:
                                     <span className="text-sm text-gray-500">
                                       {" "}
@@ -213,7 +213,7 @@ export default function TopDestination() {
                                   </p>
                                   <Button
                                     variant="outline"
-                                    className="border-blue-700 text-teal-600 hover:bg-blue-50 lg:rounded-full"
+                                    className="border-blue-700 w-full lg:w-auto text-teal-600 hover:bg-blue-50 lg:rounded-full"
                                   >
                                     Explore <MoveRight />
                                   </Button>
