@@ -7,29 +7,30 @@ const LoadingErrorEmptyState = ({
   loadingMessage = "Loading...",
   errorMessage = "Error fetching data",
   emptyMessage = "No data available",
+  children
 }) => {
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center">
-        <p className="text-gray-500">{loadingMessage}</p>
+      <div className="destination-spots flex flex-col items-center justify-center text-blue-600 text-lg font-medium mt-4 p-2 ">
+       {loadingMessage}
       </div>
     );
   }
   if (error) {
     return (
-      <div className="flex items-center justify-center">
-        <p className="text-red-500">{errorMessage}</p>
+      <div className="destination-spots flex flex-col items-center justify-center text-pink-200 text-lg font-medium italic mt-4 p-2 border-t-2 border-t-pink-700 bg-red-500 rounded-md">
+      {errorMessage}
       </div>
     );
   }
   if (!data) {
     return (
-      <div className="flex items-center justify-center">
-        <p className="text-gray-500">{emptyMessage}</p>
+      <div className="destination-spots flex flex-col items-center justify-center text-pink-200 text-lg font-medium italic mt-4 p-2 border-t-2 border-t-pink-700 bg-red-500 rounded-md">
+        {emptyMessage}
       </div>
     );
   }
-  return <></>; 
+  return <> {children} </>; 
 };
 
 export default LoadingErrorEmptyState;

@@ -13,3 +13,12 @@ export const destinations = [
   { name: "Tokyo, Japan", icon: "assets/icons/japanese_temple.svg" },
   { name: "New York, USA", icon: "assets/icons/statue.svg" },
 ];
+
+
+export const whatPeopleSay = [
+  {
+    Content: "Our trip to Japan was flawlessly organized. The local guides were knowledgeable and friendly, and the accommodations were exceptional. WanderLuxe thought of every detail!",
+    user: "Emma Thompson",
+    location: 'London, UK'
+  }
+];

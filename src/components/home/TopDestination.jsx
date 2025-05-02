@@ -10,7 +10,14 @@ import {
   CarouselPrevious,
 } from "../ui/carousel";
 import { Card, CardContent, CardFooter } from "../ui/card";
-import { ArrowRight, DollarSign, IndianRupee, MapPin, MoveRight, Star } from "lucide-react";
+import {
+  ArrowRight,
+  DollarSign,
+  IndianRupee,
+  MapPin,
+  MoveRight,
+  Star,
+} from "lucide-react";
 import { Button } from "../ui/button";
 import { useGetDestinationsQuery } from "@/services/destinationService";
 import LoadingErrorEmptyState from "../ui/LoadingErrorEmptyState";
@@ -53,13 +60,13 @@ export default function TopDestination() {
       }
     };
   }, []);
- 
+
   return (
     <>
       {/* Top Destination */}
       <section
         id="hero-destination"
-        className="w-full min-h-[50vh] bg-teal-50 py-4 bg-[url('/assets/images/bg_circle_bee.svg')] bg-repeat-space lg:bg-[length:40%] md:bg-cover"
+        className="w-full min-h-[50vh] py-4  bg-gradient-to-r from-teal-50 to-pink-100  bg-opacity-50 bg-[url('/assets/images/bg_circle_bee1.svg')] "
       >
         <Container width={90}>
           {/* Destionation title */}
@@ -76,7 +83,7 @@ export default function TopDestination() {
             <div className="spot-header w-full relative">
               <div className="p-2">
                 <img
-                  src="/assets/images/destination_beach.jpg"
+                  src="/assets/images/destination_beach-min.jpg"
                   alt="sea"
                   className="w-full h-60 object-cover rounded-md"
                 />
@@ -88,7 +95,7 @@ export default function TopDestination() {
                     className="rounded-md"
                     ref={videoRef}
                     loop
-                    src="/assets/media/sea_beach.mp4"
+                    src="/assets/media/sea_beach_min.mp4"
                   >
                     Your browser does not support the video tag.
                   </video>
@@ -116,13 +123,16 @@ export default function TopDestination() {
             </div>
 
             {/* destination spots */}
-            {!data ? (
-              <div className="destination-spots flex flex-col items-center justify-center text-pink-200 text-lg font-medium italic mt-4 p-2 border-t-2 border-t-pink-700 bg-red-500 rounded-md">
-                No destination spots available ...
-              </div>
-            ) : (
+            <LoadingErrorEmptyState
+              data={data}
+              isLoading={isLoading}
+              error={error}
+            >
               <div className="spots-card w-full h-full rounded-md shadow mt-4 p-2 flex flex-col items-center justify-center bg-[url('/assets/images/flight_spots_bg.jpg')] bg-no-repeat lg:bg-center bg-cover md:bg-cover bg-blend-multiply bg-opacity-50">
-                <Badge className="bg-pink-600 text-white" />
+                <Badge
+                  className="bg-pink-600 text-white"
+                  text={"Popular Places"}
+                />
                 <Carousel
                   opts={{
                     align: "start",
@@ -227,7 +237,7 @@ export default function TopDestination() {
                   </Button>
                 </div>
               </div>
-            )}
+            </LoadingErrorEmptyState>
           </div>
         </Container>
       </section>
